@@ -36,6 +36,7 @@ recordRoutes.route('/record/:id').get(function (req, res) {
 
 // This section will help you create a new record.
 recordRoutes.route('/record/add').post(function (req, response) {
+  console.log('🚀 ~ file: conn.js ~ line 3 ~ process.env', process.env);
   let db_connect = dbo.getDb();
   let myobj = {
     person_name: req.body.name,
