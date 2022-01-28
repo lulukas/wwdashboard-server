@@ -28,7 +28,6 @@ recordRoutes.route('/record/:id').get(function (req, res) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId(req.params.id) };
   db_connect.collection('records').findOne(myquery, function (err, result) {
-    console.log('🚀 ~ file: record.js ~ line 31 ~ result', result);
     if (err) throw err;
     res.json(result);
   });
@@ -36,7 +35,6 @@ recordRoutes.route('/record/:id').get(function (req, res) {
 
 // This section will help you create a new record.
 recordRoutes.route('/record/add').post(function (req, response) {
-  console.log('🚀 ~ file: conn.js ~ line 3 ~ process.env', process.env);
   let db_connect = dbo.getDb();
   let myobj = {
     person_name: req.body.name,
